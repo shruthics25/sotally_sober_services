@@ -6,7 +6,6 @@ const login = async (request, h) => {
   const userdetails = request.payload
   return User.findOne({ email: userdetails.email, password: userdetails.password }).lean().then(loggedInUser => {
     let response = unauthorizedResponse
-    console.log('loggedInUser', loggedInUser)
     if (loggedInUser) {
       response = { token: jwt.sign({ email: userdetails.email }, 'cartFuLL9876') }
     }
