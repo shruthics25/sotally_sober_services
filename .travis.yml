@@ -1,0 +1,7 @@
+language: node_js
+node_js: 12.9.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: 
+  app: sotally_tober
